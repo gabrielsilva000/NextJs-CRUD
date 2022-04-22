@@ -1,6 +1,8 @@
 import Layout from "../components/Layout"
 import Tabela from "../components/Tabela"
 import Cliente from "../core/Cliente"
+import Botao from "../components/Botao"
+import Formulario from "../components/Formulario"
 
 export default function Home() {
 
@@ -15,6 +17,10 @@ export default function Home() {
 
   }
 
+  function clienteExcluido(cliente: Cliente){
+
+  }
+
   return (
     <div className={`
     flex justify-center items-center h-screen
@@ -22,7 +28,15 @@ export default function Home() {
     text-white
     `}>
       <Layout titulo="Cadastro Simples">
-        <Tabela clientes={clientes} clienteSelecionado={clienteSelecionado}></Tabela>
+        <div className="flex justify-end">
+          <Botao cor="green" className="mb-4">Novo Cliente</Botao>
+        </div>
+        {/* <Tabela 
+          clientes={clientes} 
+          clienteSelecionado={clienteSelecionado}
+          clienteExcluido={clienteExcluido}
+          /> */}
+          <Formulario/>
       </Layout>
     </div>
     
